@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>The Day Spa</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="d-flex align-content-between flex-wrap">
+            <h1>
+                <a href="/" class="text-center"> Welcome to the Day Spa</a>
+            </h1>
+
+            <nav>
+
+
+                <div class="dropdown show">
+                    <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Schedule an Appointment
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Hair</a>
+                        <a class="dropdown-item" href="#">Skin</a>
+                        <a class="dropdown-item" href="#">Nails</a>
+                    </div>
+
+                </div>
+                <div class="dropdown show">
+                    <a class="btn dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Sign-In
+                    </a>
+                    <div class="dropdown-menu">
+                        <form class="px-4 py-3">
+                            <div class="form-group">
+                                <label for="exampleDropdownFormEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                    placeholder="email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleDropdownFormPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleDropdownFormPassword1"
+                                    placeholder="Password">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                <label class="form-check-label" for="dropdownCheck">
+                                    Remember me
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </form>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">New around here? Sign up</a>
+                        <a class="dropdown-item" href="#">Forgot password?</a>
+                    </div>
+
+                </div>
+                <div class="dropdown show">
+                    <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Contact Us
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">phone</a>
+                        <a class="dropdown-item" href="#">email</a>
+                    </div>
+
+                    <div class="dropdown show">
+                        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Our services
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Hair</a>
+                            <a class="dropdown-item" href="#">Skin</a>
+                            <a class="dropdown-item" href="#">Nails</a>
+                        </div>
+
+                    </div>
+            </nav>
+        </div>
+
+    </header>
+    <div class="d-flex justify-content-around">
+
+        <div class="card text-center bg-light text-dark">
+            <a href="#" class="btn-img btn-img-gradient">
+                <img class="card-img" src="../img/hair1.jpg" alt="Hair">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">Hair</h5>
+                    <p class="card-text"></p>
+                    <p class="card-text">Schedule an Appointment</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="card text-center bg-dark text-dark img-gradient-overlay">
+            <a href="0" class="mask near-moon-gradien">
+                <img class="card-img" src="../img/nail1.jpg" alt="Nails">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">Nails</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional
+                        content. This content is a little bit longer.</p>
+                    <p class="card-text">Schedule an Appointment</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="card text-center bg-dark text-dark">
+            <a href="01" class="btn-img btn-img-gradient">
+                <img class="card-img" src="../img/skin1.jpg" alt="skin">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">Skin</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional
+                        content. This content is a little bit longer.</p>
+                    <p class="card-text">Schedule an Appointment</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <h4>
+            ❤️ Made with love.
+            <div>
+                &copy; 2021
+                <script>new Date().getFullYear() > 2012 && document.write("-" + new Date().getFullYear());</script>, the
+                Spa.
+                All Rights Reserved.
+            </div>
+        </h4>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
