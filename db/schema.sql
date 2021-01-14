@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS spa_day_db;
+
+CREATE DATABASE spa_day_db;
