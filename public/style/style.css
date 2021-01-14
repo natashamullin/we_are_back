@@ -2,52 +2,55 @@ header {
     padding: 20px 35px;
     background-color: white ;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     position: sticky;
+    min-height: 210px;
     top: 0;
-    position: -webkit-sticky;
-    background-image: url("../img/jumbotron.jpg");
-        
-    background-size: cover;
+    background-image: url("../img/jumbotron.jpg");        
+    background-size: auto;
     background-position: center 80%;
-    background-attachment: fixed;
+    background-attachment: inherit;
     z-index: 9999;
+
+
   }
   header h1 {
     font-weight: bold;
-    font-size: 36px;
+    font-size: 45px;
     color: black;
     margin: 0;
-    text-shadow: 0 0 10px rgba( 0, 0, 0, 1.5 );
+    text-shadow: 0 0 15px rgb(201, 193, 193);
+    text-align: center;
+
+    
   }
   header a {
     text-decoration: none;
     color: black;
   }
+  
   header nav {
-    margin: 7px 0;
-  }
-
-  header nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    list-style: none;
-  }
-  header nav ul li a {
-    margin: 0 30px;
-    font-weight: lighter;
-    font-size: 1.55vw;
-    text-shadow: 0 0 10px rgba( 0, 0, 0, 1.5 );
+    position:absolute;
+    bottom:0;
+    right:0;
+    
 
   }
-  header nav ul li a:hover {
-    background: var(--primary-color);
-    color: var(--secondary-color);
+ 
+  .btn {
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: x-large;
+    font-family: cursive;
+  }
+  header .btn:hover {
     border-radius: 15px;
-    text-shadow: none;
+    text-shadow: 0 0 10px rgba( 0, 0, 0, 1.5 );
+    
+    
   }
 
   .card {
@@ -55,4 +58,20 @@ header {
       display: flex;
       justify-content: space-around;
       border: 0;
+      margin-top: 10px;
   }
+
+  .card-title {
+      color: black;
+      font-size: xx-large;
+      font-family: cursive;
+      text-shadow: 0 0 10px rgba( 0, 0, 0, 1.5 );
+      
+  }
+
+  .card-text {
+      color: black;
+    font-family: cursive;
+    text-shadow: 0 0 10px rgba( 0, 0, 0, 1.5 );
+  }
+
