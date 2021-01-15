@@ -5,7 +5,7 @@ header {
     position: sticky;
     min-height: 210px;
     top: 0;
-    background-image: url("../img/jumbotron.jpg");        
+    background-image: url("/img/jumbotron.jpg");        
     background-size: auto;
     background-position: center 80%;
     background-attachment: inherit;
