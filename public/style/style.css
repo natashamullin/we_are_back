@@ -23,7 +23,7 @@ header {
 
     
   }
-  header a {
+ a {
     text-decoration: none;
     color: black;
   }
@@ -73,5 +73,7 @@ header {
       color: black;
     font-family: cursive;
     text-shadow: 0 0 10px rgba( 0, 0, 0, 1.5 );
+    
   }
+
 
