@@ -99,52 +99,7 @@
     </header>
     <main>
 
-        <div class="d-flex justify-content-around">
-
-            <div class="card text-center bg-light text-dark">
-                {{#if loggedIn}}
-                <a href="#"
-                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cesar-martinez-perez-415/15min'});return false;"
-                    class="btn-img btn-img-gradient"> {{/if}}
-                    <img class="card-img" src="/img/hair1.jpg" alt="Hair">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Hair</h5>
-
-                        <p class="card-text">
-
-                            Schedule an Appointment
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-
-            <div class="card text-center bg-dark text-dark img-gradient-overlay">
-                <a href="0"
-                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cesar-martinez-perez-415/15min'});return false;"
-                    class="mask near-moon-gradien">
-                    <img class="card-img" src="/img/nail1.jpg" alt="Nails">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Nails</h5>
-                        <p class="card-text"></p>
-                        <p class="card-text"> Schedule an Appointment</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card text-center bg-dark text-dark">
-                <a href="01"
-                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cesar-martinez-perez-415/15min'});return false;"
-                    class="btn-img btn-img-gradient">
-                    <img class="card-img" src="/img/skin1.jpg" alt="skin">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Skin</h5>
-                        <p class="card-text"></p>
-                        <span class="card-text align-text-bottom">Schedule an Appointment</span>
-                    </div>
-                </a>
-            </div>
-        </div>
+        {{{ body }}}
     </main>
 
     <footer>
