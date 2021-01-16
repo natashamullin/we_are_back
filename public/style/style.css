@@ -46,7 +46,15 @@ header {
     font-size: x-large;
     font-family: cursive;
   }
-  header .btn:hover {
+.logoutbtn{
+  background-color: transparent;
+    color: black;
+    border: none;
+    font-size: medium;
+    font-family: cursive;
+  }
+
+  header, .btn:hover, .logoutbtn:hover {
     border-radius: 15px;
     text-shadow: 0 0 10px rgba( 0, 0, 0, 1.5 );
     
