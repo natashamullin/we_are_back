@@ -84,4 +84,11 @@ header {
     
   }
 
+  .card-text1 {
+    color: black;
+    font-family: cursive;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(236, 100, 75, 1.5);
+  }
+
 
