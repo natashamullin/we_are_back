@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const passport = require('passport');
 
 // GET ALL users
 router.get('/', (req, res) => {
@@ -57,7 +58,7 @@ router.post('/', (req, res) => {
 });
 
 // User Login
-router.post('/login', (req, res) => {
+router.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login', failureFlash: true }), (req, res) => {
     User.findOne({
         where: {
             email: req.body.email

@@ -4,6 +4,7 @@ const sequelize = require('./config/connection');
 const handlebars = require('express-handlebars');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const passport = require('passport');
 
 const sess = {
     secret: 'Super secret secret',
@@ -17,11 +18,18 @@ const sess = {
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 app.engine("handlebars", handlebars());
 app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"))
+app.use(express.static("public"));
+app.use(session(sess));
+
+require('./config/passport');
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(routes);
 
