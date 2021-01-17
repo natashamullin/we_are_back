@@ -23,10 +23,11 @@ async function signupFormHandler(event) {
         if (response.ok) {
             console.log("you did it!");
         } else {
+            console.log("it didnt work")
             alert(response.statusText);
         }
     }
 }
-
+console.log(document.querySelector('#signup-form'))
 
 document.querySelector('#signup-form').addEventListener('submit', signupFormHandler)
