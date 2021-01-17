@@ -23,7 +23,7 @@ async function signupFormHandler(event) {
         if (response.ok) {
             console.log("you did it!");
         } else {
-            console.log("it didnt work")
+            console.log("it didn't work")
             alert(response.statusText);
         }
     }
