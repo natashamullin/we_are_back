@@ -17,10 +17,17 @@
 <body>
 
     <header>
-
+        {{#if loggedIn}}
         <h1>
-            <a href="/" class="text-center"> Welcome to the Day Spa</a>
+            <a href="/" class="text-center"> Welcome to the The Day Spa!</a>
+
         </h1>
+        {{else}}
+        <h1>
+            <a href="/" class="text-center"> The Day Spa!</a>
+
+        </h1>
+        {{/if}}
 
         <nav>
             <div class="d-flex justify-content-between ">
@@ -94,11 +101,13 @@
                     </div>
 
                 </div>
+                {{#if loggedIn}}
+                <div>
+                    <button id="logout" class="logoutbtn">Log Out</button>
+                </div>
+                {{/if}}
+
             </div>
-            {{#if loggedIn}}
-            <p>Welcome! </p>
-            <button id="logout" class="logoutbtn">Log Out</button>
-            {{/if}}
 
         </nav>
 

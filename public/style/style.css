@@ -14,6 +14,7 @@ header {
 
   }
   header h1 {
+    font-family: cursive;
     font-weight: bold;
     font-size: 45px;
     color: black;
@@ -91,9 +92,26 @@ header {
     text-shadow: 0 0 10px rgba(236, 100, 75, 1.5);
   }
 
+/* sign up card  */
 .signupCard{
+  margin: auto;
+font-family: cursive;
+color: black;
   border: black;
   border-radius: 5 px;
 }
+
+.card-header{
+  font-size: 22px ;
+}
+
+
+
+
 /* Small devices (tablets, 768px and up) */
-/* @media (min-width: @screen-sm-min) { ... } */
+@media only screen and (max-width: 600px) { 
+  .d-flex {
+    display: flex!important;
+    flex-direction: column;
+  }
+}
