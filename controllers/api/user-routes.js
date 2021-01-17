@@ -58,18 +58,22 @@ router.post('/', (req, res) => {
 
 // User Login
 router.post('/login', (req, res) => {
+    console.log("you made it ")
     User.findOne({
         where: {
             email: req.body.email
         }
     }).then(dbUserData => {
         if (!dbUserData) {
+            console.log("email")
             res.status(400).json({ message: 'No user with that email address found' });
             return;
         }
 
         const validPassword = dbUserData.checkPassword(req.body.password);
+
         if (!validPassword) {
+            console.log("hello")
             res.status(400).json({ message: 'Incorrect password!' });
             return;
         }
@@ -77,7 +81,7 @@ router.post('/login', (req, res) => {
             req.session.user_id = dbUserData.id;
             req.session.email = dbUserData.email;
             req.session.loggedIn = true;
-
+            console.log("hello")
             res.json({ user: dbUserData, message: 'You are now logged in.' });
         });
     });

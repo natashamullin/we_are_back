@@ -55,9 +55,10 @@
                                 <input type="password" class="form-control" id="formPassword" placeholder="Password">
                             </div>
                             {{#if loggedIn}}
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                            {{else}}
                             <button type="submit" class="logoutbtn btn-secondary">Log Out</button>
+
+                            {{else}}
+                            <button type="submit" class="btn btn-primary">Sign in</button>
                             {{/if}}
                         </form>
                         <div class="dropdown-divider"></div>
@@ -92,6 +93,7 @@
                 </div>
             </div>
             {{#if loggedIn}}
+            <p>Welcome! </p>
             <button id="logout" class="logoutbtn">Log Out</button>
             {{/if}}
 
@@ -129,7 +131,7 @@
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
-
+    <script src="/javascript/login.js"></script>
 </body>
 
 </html>
