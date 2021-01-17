@@ -55,9 +55,10 @@
                                 <input type="password" class="form-control" id="formPassword" placeholder="Password">
                             </div>
                             {{#if loggedIn}}
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                            {{else}}
                             <button type="submit" class="logoutbtn btn-secondary">Log Out</button>
+
+                            {{else}}
+                            <button type="submit" class="btn btn-primary">Sign in</button>
                             {{/if}}
                         </form>
                         <div class="dropdown-divider"></div>
@@ -73,8 +74,11 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">phone</a>
-                        <a class="dropdown-item" href="#">email</a>
+                        <ul>
+                            <li><a class="dropdown-item" href="#">phone:555*555*5555</a></li>
+                            <li class="grid-item3-2"><a href="mailto:test@gamil.com"> Email Us</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -91,7 +95,10 @@
 
                 </div>
             </div>
+            {{#if loggedIn}}
+            <p>Welcome! </p>
             <button id="logout" class="logoutbtn">Log Out</button>
+            {{/if}}
 
         </nav>
 
@@ -127,7 +134,7 @@
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
-
+    <script src="/javascript/login.js"></script>
 </body>
 
 </html>

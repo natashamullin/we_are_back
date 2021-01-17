@@ -17,12 +17,14 @@ async function signupFormHandler(event) {
                 'Content-Type': 'application/json'
             }
         });
-
+        console.log(name)
 
         //check if response is ok 
         if (response.ok) {
-            console.log("you did it!");
+            console.log("you did it!")
+            document.location.replace('/');
         } else {
+            console.log("it didn't work")
             alert(response.statusText);
         }
     }
