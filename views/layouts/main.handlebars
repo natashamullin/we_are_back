@@ -54,12 +54,14 @@
                                 <label for="formPassword">Password</label>
                                 <input type="password" class="form-control" id="formPassword" placeholder="Password">
                             </div>
-
+                            {{#if loggedIn}}
                             <button type="submit" class="btn btn-primary">Sign in</button>
+                            {{else}}
                             <button type="submit" class="logoutbtn btn-secondary">Log Out</button>
+                            {{/if}}
                         </form>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" id="signup-form" href="/signUp">New around here? Sign up</a>
+                        <a class="dropdown-item" href="/signup">New around here? Sign up</a>
                         <a class="dropdown-item" href="#">Forgot password?</a>
                     </div>
 
@@ -97,51 +99,7 @@
     </header>
     <main>
 
-        <div class="d-flex justify-content-around">
-
-            <div class="card text-center bg-light text-dark">
-                <a href="#"
-                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cesar-martinez-perez-415/15min'});return false;"
-                    class="btn-img btn-img-gradient">
-                    <img class="card-img" src="/img/hair1.jpg" alt="Hair">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Hair</h5>
-
-                        <p class="card-text">
-
-                            Schedule an Appointment
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-
-            <div class="card text-center bg-dark text-dark img-gradient-overlay">
-                <a href="0"
-                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cesar-martinez-perez-415/15min'});return false;"
-                    class="mask near-moon-gradien">
-                    <img class="card-img" src="/img/nail1.jpg" alt="Nails">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Nails</h5>
-                        <p class="card-text"></p>
-                        <p class="card-text"> Schedule an Appointment</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card text-center bg-dark text-dark">
-                <a href="01"
-                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cesar-martinez-perez-415/15min'});return false;"
-                    class="btn-img btn-img-gradient">
-                    <img class="card-img" src="/img/skin1.jpg" alt="skin">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Skin</h5>
-                        <p class="card-text"></p>
-                        <span class="card-text align-text-bottom">Schedule an Appointment</span>
-                    </div>
-                </a>
-            </div>
-        </div>
+        {{{ body }}}
     </main>
 
     <footer>
@@ -166,7 +124,9 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+    {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
+    {{/if}}
 
 </body>
 

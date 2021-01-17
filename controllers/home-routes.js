@@ -3,7 +3,11 @@ const sequelize = require('../config/connection');
 const { Post, User, } = require('../models');
 
 router.get('/', (req, res) => {
+<<<<<<< HEAD
     res.render("body");
+=======
+    res.render("body", { loggedIn: req.session.loggedIn });
+>>>>>>> main
 });
 
 router.get('/login', (req, res) => {
@@ -15,12 +19,12 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/signUp', (req, res) => {
+router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
-    res.render('signUp');
+    res.render('signup');
 });
 
 
