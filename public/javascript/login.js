@@ -20,5 +20,4 @@ async function signinFormHandler(event) {
         }
     }
 }
-
-document.querySelector('.signinForm').addEventListener('submit', signinFormHandler);
+document.querySelector('#signinForm').addEventListener('submit', signinFormHandler);

@@ -1,21 +1,35 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-//const connection = require('./connection');
-const User = require('../models');
+const { User } = require('../models');
 
-passport.use(new LocalStrategy(
-    function(email, password, done) {
-        User.findOne({ username: email }), function(err, user) {
-            if (err) {
-                return done(err);
-            }
-            if (!user) {
-                return(done(null, false, { message: 'Invalid e-mail address' }));
-            }
-            if (!user.validPassword(password)) {
-                return done(null, false, { message: 'Incorrect password.' });
-            }
-            return done(null, user);
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'
+}, async (email, password, done) => {
+    try {
+        const user = await User.findOne({ where: { email } })
+        if (!user || !user.checkPassword(password)) {
+            return done(null, false, { errors: { 'email or password': 'is invalid' } });
         }
+
+        return done(null, user)
+    } catch (err) {
+        done(err);
+     }
+}));
+
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+    try {
+        const user = await User.findByPk(id)
+        done(null, user);
+    } catch(err) {
+        done(err)
     }
-))
+    
+});
+
+module.exports = passport;

@@ -54,10 +54,10 @@
                                 <label for="formPassword">Password</label>
                                 <input type="password" class="form-control" id="formPassword" placeholder="Password">
                             </div>
-                            {{#if loggedIn}}
-                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            {{#if user}}
+                            <button type="submit" class="btn btn-primary">Log Out</button>
                             {{else}}
-                            <button type="submit" class="logoutbtn btn-secondary">Log Out</button>
+                            <button type="submit" class="logoutbtn btn-secondary">Sign In</button>
                             {{/if}}
                         </form>
                         <div class="dropdown-divider"></div>
@@ -124,8 +124,10 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-    {{#if loggedIn}}
+    {{#if user}}
     <script src="/javascript/logout.js"></script>
+    {{else}}
+    <script src="/javascript/login.js"></script>
     {{/if}}
 
 </body>

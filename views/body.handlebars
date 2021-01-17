@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-around">
-    {{#if loggedIn}}
+    {{#if user}}
     <div class="card text-center bg-light text-dark">
         <a href="#"
             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cesar-martinez-perez-415/15min'});return false;"
@@ -23,7 +23,7 @@
     </div>
     {{/if}}
 
-    {{#if loggedIn}}
+    {{#if user}}
     <div class="card text-center bg-dark text-dark img-gradient-overlay">
         <a href="0"
             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cesar-martinez-perez-415/15min'});return false;"
@@ -47,7 +47,7 @@
         </div>
     </div>
     {{/if}}
-    {{#if loggedIn}}
+    {{#if user}}
     <div class="card text-center bg-dark text-dark">
         <a href="01"
             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cesar-martinez-perez-415/15min'});return false;"
