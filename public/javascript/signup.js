@@ -17,7 +17,7 @@ async function signupFormHandler(event) {
                 'Content-Type': 'application/json'
             }
         });
-
+        console.log(name)
 
         //check if response is ok 
         if (response.ok) {
@@ -27,6 +27,6 @@ async function signupFormHandler(event) {
         }
     }
 }
-console.log(document.querySelector('#signup-form'))
 
-document.querySelector('form#signup-form').addEventListener('submit', signupFormHandler)
+
+document.querySelector('#signup-form').addEventListener('submit', signupFormHandler)
