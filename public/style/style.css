@@ -91,4 +91,9 @@ header {
     text-shadow: 0 0 10px rgba(236, 100, 75, 1.5);
   }
 
-
+.signupCard{
+  border: black;
+  border-radius: 5 px;
+}
+/* Small devices (tablets, 768px and up) */
+/* @media (min-width: @screen-sm-min) { ... } */
