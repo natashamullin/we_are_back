@@ -33,7 +33,10 @@ router.get('/:id', withAuth, (req, res) => {
                 res.status(404).json({ message: 'No review found with this id' });
                 return;
             }
-            res.json(dbReviewData);
+            
+            const review = dbReviewData.get({ plain: true });
+
+            res.render("single-review", { review });
         })
         .catch(err => {
             console.log(err);
@@ -45,7 +48,7 @@ router.post('/', withAuth, (req, res) => {
     Review.create({
         title: req.body.title,
         review_body: req.body.review_body,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(dbReviewData => res.json(dbReviewData))
         .catch(err => {

@@ -24,21 +24,6 @@
 
         <nav>
             <div class="d-flex justify-content-between ">
-
-                <div class="dropdown show">
-                    <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Schedule an Appointment
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Hair</a>
-                        <a class="dropdown-item" href="#">Skin</a>
-                        <a class="dropdown-item" href="#">Nails</a>
-                    </div>
-
-                </div>
-
                 <div class="dropdown show">
                     <a class="btn dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -92,13 +77,12 @@
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="#">Leave positive Feedback </a>
-                        <a class="dropdown-item" href="#">Reviews</a>
+                        <a class="dropdown-item" href="/reviews">Reviews</a>
                     </div>
 
                 </div>
             </div>
             {{#if loggedIn}}
-            <p>Welcome! </p>
             <button id="logout" class="logoutbtn">Log Out</button>
             {{/if}}
 
