@@ -1,0 +1,20 @@
+<article>
+    <h2>
+        Edit Review
+    </h2>
+    <form class="edit-review-form">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Title</span>
+            <input name="review-title" type="text" class="form-control" value="{{review.title}}" />
+        </div>
+        <div class="input-group">
+            <span class="input-group-text">Body</span>
+            <textarea class="form-control" name="review-body" id="review-body">{{review.review_body}}</textarea>
+        </div>
+        <button type="submit" class="save-review btn btn-primary my-2">Save Review</button>
+        <button type="button" class="delete-review-btn btn btn-danger my-2">Delete Review</button>
+    </form>
+</article>
+
+<script src="/javascript/edit-review.js"></script>
+<script src="/javascript/delete-review.js"></script>
