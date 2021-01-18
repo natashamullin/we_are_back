@@ -8,6 +8,7 @@ router.use('/api', apiRoutes);
 router.use(homeRoutes)
 
 router.use((req, res) => {
+    console.log("No handler for " + req.originalUrl);
     res.status(404).end();
 });
 

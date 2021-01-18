@@ -6,6 +6,11 @@ class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compare(loginPw, this.password);
     }
+    toJSON() {
+        const values = this.get();
+        delete values.password
+        return values
+    }
 }
 
 User.init(

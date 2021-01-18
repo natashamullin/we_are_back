@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const passport = require('passport');
 
 // GET ALL users
 router.get('/', (req, res) => {
@@ -57,7 +58,9 @@ router.post('/', (req, res) => {
 });
 
 // User Login
-router.post('/login', (req, res) => {
+
+router.post('/login', passport.authenticate('local'), (req, res) => {
+    res.json(req.user);
     console.log("you made it ")
     User.findOne({
         where: {
@@ -86,17 +89,14 @@ router.post('/login', (req, res) => {
         });
     });
 
+
 });
 
 
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-    } else {
-        res.status(404).end();
-    }
+    req.session.destroy(() => {
+        res.sendStatus(204);
+    });
 });
 
 // UPDATE a user
