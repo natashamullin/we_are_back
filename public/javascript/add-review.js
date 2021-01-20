@@ -2,7 +2,7 @@ async function newReviewHandler(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="review-title"]').value.trim();
-    const review_body = document.querySelector('input[name="review-body"]').value.trim();
+    const review_body = document.querySelector('textarea[name="review-body"]').value.trim();
 
     const response = await fetch(`/api/reviews`, {
         method: 'POST',
@@ -16,7 +16,7 @@ async function newReviewHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/reviews');
+        document.location.reload();
     } else {
         alert(response.statusText);
     }

@@ -5,7 +5,7 @@ const { Post, User, } = require('../models');
 router.get('/', (req, res) => {
     console.log({
         session: req.session,
-        user:req.user
+        user: req.user
     });
     res.render("body", { user: req.user });
 });

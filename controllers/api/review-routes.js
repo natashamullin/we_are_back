@@ -1,6 +1,6 @@
 const router = require('express').Router();
+const passport = require('passport');
 const { Review, User } = require('../../models');
-const withAuth = require('../../utils/auth')
 
 router.get('/', (req, res) => {
     Review.findAll({
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/:id', withAuth, (req, res) => {
+router.get('/:id', (req, res) => {
     Review.findOne({
         where: {
             id: req.params.id
@@ -33,7 +33,7 @@ router.get('/:id', withAuth, (req, res) => {
                 res.status(404).json({ message: 'No review found with this id' });
                 return;
             }
-            
+
             const review = dbReviewData.get({ plain: true });
 
             res.render("single-review", { review });
@@ -44,37 +44,42 @@ router.get('/:id', withAuth, (req, res) => {
         });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     Review.create({
         title: req.body.title,
         review_body: req.body.review_body,
         user_id: req.session.user_id
     })
-        .then(dbReviewData => res.json(dbReviewData))
+        .then(dbReviewData => res.status(201).json(dbReviewData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
 
-router.put('/:id', withAuth, (req, res) => {
-    Review.update(
-        {
-            title: req.body.title,
-            review_body: req.body.review_body
-        },
-        {
-            where: {
-                id: req.params.id
+router.put('/:id', (req, res) => {
+    console.log(req.user)
+    Review.findByPk(req.params.id)
+        .then(review => {
+            if (!review) {
+                res.status(404);
+                return { message: 'No review found with this id' };
+
             }
-        }
-    )
-        .then(dbReviewData => {
-            if (!dbReviewData) {
-                res.status(404).json({ message: 'No review found with this id' });
-                return;
+            if (review.user_id !== req.user?.id) {
+                res.status(401);
+                return { message: 'Not authorized' }
             }
-            res.json(dbReviewData)
+            return review.update(
+                {
+                    title: req.body.title,
+                    review_body: req.body.review_body
+                },
+            )
+        })
+        .then(review => {
+
+            res.json(review)
         })
         .catch(err => {
             console.log(err);
@@ -82,18 +87,23 @@ router.put('/:id', withAuth, (req, res) => {
         });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
-    Review.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(dbReviewData => {
-            if (!dbReviewData) {
-                res.status(404).json({ message: 'No review found with this id' });
-                return;
+router.delete('/:id', (req, res) => {
+    Review.findByPk(req.params.id)
+        .then(review => {
+            if (!review) {
+                res.status(404);
+                return { message: 'No review found with this id' };
+
             }
-            res.json(dbReviewData);
+            if (review.user_id !== req.user?.id) {
+                res.status(401);
+                return { message: 'Not authorized' }
+            }
+            return review.destroy()
+        })
+        .then(error => {
+            if (!error) res.sendStatus(204)
+            else res.json(error)
         })
         .catch(err => {
             console.log(err);
