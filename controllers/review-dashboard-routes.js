@@ -3,20 +3,14 @@ const sequelize = require('../config/connection');
 const { Review, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/leave-a-review', (req, res) => {
     Review.findAll({
-        // where: {
-        //     user_id: req.session.user_id
-        // },
-        // include: [
-        //     {
-        //         model: User
-        //     }
-        // ]
+
     })
         .then(dbReviewData => {
-            const reviews = dbReviewData.map(review => review.get({ plain: true }));
-            res.render('reviews-dashboard.handlebars', { reviews, loggedIn: true });
+            const reviews = dbReviewData.map(review => review.get({ plain: true }))
+                .map(review => ({ ...review, canEdit: review.user_id === req.user?.id }));
+            res.render('leave-a-review', { reviews, loggedIn: true });
         })
         .catch(err => {
             console.log(err);
@@ -24,7 +18,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/edit/:id', (req, res) => {
+router.get('/reviews/edit/:id', (req, res) => {
     Review.findOne({
         where: {
             id: req.params.id
@@ -41,6 +35,18 @@ router.get('/edit/:id', (req, res) => {
             } else {
                 res.status(404).end();
             }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+router.get('/reviews', (req, res) => {
+    Review.findAll({})
+        .then(dbReviewData => {
+            const reviews = dbReviewData.map(review => review.get({ plain: true }))
+                .map(review => ({ ...review, canEdit: review.user_id === req.user?.id }));
+            res.render('reviews', { reviews, loggedIn: true });
         })
         .catch(err => {
             console.log(err);

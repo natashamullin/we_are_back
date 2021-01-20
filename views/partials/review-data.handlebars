@@ -5,7 +5,9 @@
     <div class="card-body bg-light">
         <p class="card-text">{{review_body}}</p>
     </div>
+    {{#if canEdit}}
     <div class="card-footer">
         <a href="/reviews/edit/{{id}}" class="edit-link">Edit Post</a>
     </div>
+    {{/if}}
 </div>

@@ -5,7 +5,7 @@ const homeRoutes = require('./home-routes');
 const reviewBoardRoutes = require('./review-dashboard-routes');
 
 router.use('/api', apiRoutes);
-router.use('/reviews', reviewBoardRoutes);
+router.use(reviewBoardRoutes);
 
 router.use(homeRoutes)
 

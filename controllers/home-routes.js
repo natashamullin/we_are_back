@@ -27,13 +27,7 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-router.get('/review', (req, res) => {
-    console.log({
-        session: req.session,
-        user: req.user
-    });
-    res.render('single-review', { user: req.user });
-});
+
 
 
 

@@ -1,0 +1,29 @@
+{{#if loggedIn}}
+<section class="container">
+  <h2>Leave A Review</h2>
+  <form class="new-review-form">
+    <div>
+      <label for="review-title">Name</label>
+      <input type="text" name="review-title" />
+    </div>
+    <div>
+      <label for="review-body">Leave your comment below</label>
+      <textarea class="form-control" name="review-body" rows="3"></textarea>
+
+    </div>
+    <button type="submit" class="review-btn btn-primary">Leave Review</button>
+  </form>
+</section>
+{{/if}}
+
+{{#if reviews.length}}
+<section class="container">
+  <h2>Your Reviews</h2>
+  {{#each reviews as |review|}}
+  {{> review-data review}}
+  <a href="/reviews/edit/{{review.id}}" class="edit-link">Edit Review</a>
+  {{/each}}
+</section>
+{{/if}}
+
+<script src="/javascript/add-review.js"></script>

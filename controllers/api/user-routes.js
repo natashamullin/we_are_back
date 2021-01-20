@@ -60,7 +60,6 @@ router.post('/', (req, res) => {
 // User Login
 
 router.post('/login', passport.authenticate('local'), (req, res) => {
-    res.json(req.user);
     console.log("you made it ")
     User.findOne({
         where: {
@@ -84,7 +83,7 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
             req.session.user_id = dbUserData.id;
             req.session.email = dbUserData.email;
             req.session.loggedIn = true;
-            console.log("hello")
+            console.log("session")
             res.json({ user: dbUserData, message: 'You are now logged in.' });
         });
     });
