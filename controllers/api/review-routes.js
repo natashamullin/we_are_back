@@ -66,7 +66,7 @@ router.put('/:id', (req, res) => {
                 return { message: 'No review found with this id' };
 
             }
-            if (review.user_id !== req.user?.id) {
+            if (review.user_id !== req.user_id) {
                 res.status(401);
                 return { message: 'Not authorized' }
             }
