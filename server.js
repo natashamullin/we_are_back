@@ -33,5 +33,7 @@ app.use(passport.session());
 app.use(routes);
 
 sequelize.sync({ force: true }).then(() => {
-    app.listen(PORT, () => console.log('Now Listening'));
+    app.listen(process.env.PORT || 3000, function () {
+        console.log("Now listening ", this.address().port, app.settings.env);
+    });
 });
