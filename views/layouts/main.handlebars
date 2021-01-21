@@ -17,7 +17,7 @@
 <body>
 
     <header>
-        {{#if loggedIn}}
+        {{#if user}}
         <h1>
             <a href="/" class="text-center"> Welcome to the The Day Spa!</a>
             {{user.displayName}}
@@ -95,9 +95,9 @@
                     </li>
 
 
-                    {{#if loggedIn}}
+                    {{#if user}}
                     <li class="nav-item">
-                        <a class="nav-link logoutbtn" id="logout">Log Out</a>
+                        <button type="click" class="logoutbtn btn-secondary" id="logout">Log Out</button>
                     </li>
 
                     {{/if}}
@@ -133,7 +133,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-    {{#if loggedIn}}
+    {{#if user}}
     <script src="/javascript/logout.js"></script>
     {{else}}
     <script src="/javascript/login.js"></script>
