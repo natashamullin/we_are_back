@@ -25,81 +25,87 @@
         </h1>
         {{else}}
         <h1>
-            <a href="/" class="text-center"> The Day Spa!</a>
+            <a href="/" class="text-center"> The Day Spa</a>
 
         </h1>
         {{/if}}
 
-        <nav>
-            <div class="d-flex justify-content-between ">
-                <div class="dropdown show">
-                    <a class="btn dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Sign-In
-                    </a>
-                    <div class="dropdown-menu">
-                        <form class="px-4 py-3" id="signinForm">
-                            <div class="form-group">
-                                <label for="formEmail">Email address</label>
-                                <input type="email" class="form-control" id="formEmail" placeholder="email@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="formPassword">Password</label>
-                                <input type="password" class="form-control" id="formPassword" placeholder="Password">
-                            </div>
+        <nav class="navbar navbar-expand-lg ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="btn dropdown-toggle " href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sign-In
+                        </a>
+                        <div class="dropdown-menu">
+                            <form class="px-4 py-3" id="signinForm">
+                                <div class="form-group">
+                                    <label for="formEmail">Email address</label>
+                                    <input type="email" class="form-control" id="formEmail"
+                                        placeholder="email@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formPassword">Password</label>
+                                    <input type="password" class="form-control" id="formPassword"
+                                        placeholder="Password">
+                                </div>
 
-                            {{#if user}}
-                            <button type="click" class="logoutbtn btn-secondary" id="logout">Log Out</button>
+                                {{#if user}}
+                                <button type="click" class="logoutbtn btn-secondary" id="logout">Log Out</button>
 
-                            {{else}}
-                            <button type="submit" class="btn btn-primary">Sign in</button>
+                                {{else}}
+                                <button type="submit" class="btn btn-primary">Sign in</button>
 
-                            {{/if}}
-                        </form>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/signup">New around here? Sign up</a>
-                        <a class="dropdown-item" href="#">Forgot password?</a>
-                    </div>
+                                {{/if}}
+                            </form>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/signup">New around here? Sign up</a>
+                            <a class="dropdown-item" href="#">Forgot password?</a>
+                        </div>
+                    </li>
 
-                </div>
-                <div class="dropdown show">
-                    <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Contact Us
-                    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  btn dropdown-toggle" href="#" role="button" id="navbarDropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Contact Us
+                        </a>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <ul>
-                            <li><a class="dropdown-item" href="#">phone:555*555*5555</a></li>
-                            <li class="grid-item3-2"><a href="mailto:test@gamil.com"> Email Us</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <ul>
+                                <li><a class="dropdown-item" href="#">phone:555*555*5555</a></li>
+                                <li class="grid-item3-2"><a href="mailto:test@gamil.com"> Email Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item btn dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Our Reviews
+                        </a>
 
-                <div class="dropdown show">
-                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Our Reviews
-                    </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="/leave-a-review">Leave positive Feedback </a>
+                            <a class="dropdown-item" href="/reviews">Reviews</a>
+                        </div>
+                    </li>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="/leave-a-review">Leave positive Feedback </a>
-                        <a class="dropdown-item" href="/reviews">Reviews</a>
-                    </div>
 
-                </div>
-                {{#if loggedIn}}
-                <div>
-                    <button id="logout" class="logoutbtn">Log Out</button>
-                </div>
-                {{/if}}
+                    {{#if loggedIn}}
+                    <li class="nav-item">
+                        <a class="nav-link logoutbtn" id="logout">Log Out</a>
+                    </li>
+
+                    {{/if}}
+                </ul>
 
             </div>
-
         </nav>
-
-
     </header>
     <main>
 
