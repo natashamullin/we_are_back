@@ -12,6 +12,7 @@ async function deleteFormHandler(event) {
         document.location.replace('/reviews');
     } else {
         alert(response.statusText);
+        console.log("so sorry")
     }
 }
 

@@ -66,10 +66,10 @@ router.put('/:id', (req, res) => {
                 return { message: 'No review found with this id' };
 
             }
-            if (review.user_id !== req.user_id) {
-                res.status(401);
-                return { message: 'Not authorized' }
-            }
+            // if (review.user_id !== req.user_id) {
+            //     res.status(401);
+            //     return { message: 'Not authorized' }
+            // }
             return review.update(
                 {
                     title: req.body.title,
@@ -95,10 +95,10 @@ router.delete('/:id', (req, res) => {
                 return { message: 'No review found with this id' };
 
             }
-            if (review.user_id !== req.user_id) {
-                res.status(401);
-                return { message: 'Not authorized' }
-            }
+            // if (review.user_id !== req.user_id) {
+            //     res.status(401);
+            //     return { message: 'Not authorized' }
+            // }
             return review.destroy()
         })
         .then(error => {
