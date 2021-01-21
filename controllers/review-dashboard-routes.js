@@ -9,7 +9,7 @@ router.get('/leave-a-review', (req, res) => {
     })
         .then(dbReviewData => {
             const reviews = dbReviewData.map(review => review.get({ plain: true }))
-                .map(review => ({ ...review, canEdit: review.user_id === req.user?.id }));
+                .map(review => ({ ...review, canEdit: review.user_id === req.user_id }));
             res.render('leave-a-review', { reviews, user: true });
         })
         .catch(err => {
@@ -45,7 +45,7 @@ router.get('/reviews', (req, res) => {
     Review.findAll({})
         .then(dbReviewData => {
             const reviews = dbReviewData.map(review => review.get({ plain: true }))
-                .map(review => ({ ...review, canEdit: review.user_id === req.user?.id }));
+                .map(review => ({ ...review, canEdit: review.user_id === req.user_id }));
             res.render('reviews', { reviews, user: true });
         })
         .catch(err => {
