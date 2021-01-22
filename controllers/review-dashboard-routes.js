@@ -9,8 +9,8 @@ router.get('/leave-a-review', (req, res) => {
     })
         .then(dbReviewData => {
             const reviews = dbReviewData.map(review => review.get({ plain: true }))
-                .map(review => ({ ...review, canEdit: review.user_id === req.user?.id }));
-            res.render('leave-a-review', { reviews, loggedIn: true });
+                .map(review => ({ ...review, canEdit: review.user_id === req.user_id }));
+            res.render('leave-a-review', { reviews, user: true });
         })
         .catch(err => {
             console.log(err);
@@ -30,7 +30,7 @@ router.get('/reviews/edit/:id', (req, res) => {
 
                 res.render('edit-review.handlebars', {
                     review,
-                    loggedIn: req.session.loggedIn
+                    user: req.session.user
                 });
             } else {
                 res.status(404).end();
@@ -45,8 +45,8 @@ router.get('/reviews', (req, res) => {
     Review.findAll({})
         .then(dbReviewData => {
             const reviews = dbReviewData.map(review => review.get({ plain: true }))
-                .map(review => ({ ...review, canEdit: review.user_id === req.user?.id }));
-            res.render('reviews', { reviews, loggedIn: true });
+                .map(review => ({ ...review, canEdit: review.user_id === req.user_id }));
+            res.render('reviews', { reviews, user: true });
         })
         .catch(err => {
             console.log(err);

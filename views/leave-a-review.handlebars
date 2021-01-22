@@ -1,4 +1,4 @@
-{{#if loggedIn}}
+{{#if user}}
 <section class="container">
   <h2>Leave A Review</h2>
   <form class="new-review-form">
@@ -20,7 +20,7 @@
 <section class="container">
   <h2>Your Reviews</h2>
   {{#each reviews as |review|}}
-  {{> review-data review}}
+  {{> review-data review }}
   <a href="/reviews/edit/{{review.id}}" class="edit-link">Edit Review</a>
   {{/each}}
 </section>
