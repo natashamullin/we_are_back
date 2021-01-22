@@ -45,6 +45,11 @@ header {
     .navbar{ 
     position: absolute;
   }
+
+  .navbar-nav .dropdown-menu {
+    position: absolute;
+    float: none;
+}
  
   .btn {
     background-color: transparent;
