@@ -44,11 +44,11 @@ router.get('/:id', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
+router.post('/', passport.authenticate("local"), (req, res) => {
     Review.create({
         title: req.body.title,
         review_body: req.body.review_body,
-        user_id: req.session.user_id
+        user_id: req.user.id
     })
         .then(dbReviewData => res.status(201).json(dbReviewData))
         .catch(err => {

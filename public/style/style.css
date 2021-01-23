@@ -115,6 +115,10 @@ color: black;
 .card-header{
   font-size: 22px ;
 }
+/* modal */
+.modal{
+  z-index: 9999;
+}
 
 
 

@@ -11,7 +11,8 @@ async function deleteFormHandler(event) {
     if (response.ok) {
         document.location.replace('/reviews');
     } else {
-        alert(response.statusText);
+        // alert(response.statusText)
+        $('#modalError').modal();
         console.log("so sorry")
     }
 }

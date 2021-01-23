@@ -3,7 +3,9 @@ async function newReviewHandler(event) {
 
     const title = document.querySelector('input[name="review-title"]').value.trim();
     const review_body = document.querySelector('textarea[name="review-body"]').value.trim();
-
+    if (!title || !review_body) {
+        return;
+    }
     const response = await fetch(`/api/reviews`, {
         method: 'POST',
         body: JSON.stringify({
@@ -16,9 +18,12 @@ async function newReviewHandler(event) {
     });
 
     if (response.ok) {
-        document.location.reload();
+        console.log("success")
+        // document.location.reload();
     } else {
-        alert(response.statusText);
+        console.log("fail")
+        // alert(response.statusText)
+        $('#modalError').modal();
     }
 }
 
