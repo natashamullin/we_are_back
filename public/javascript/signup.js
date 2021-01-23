@@ -22,10 +22,11 @@ async function signupFormHandler(event) {
         //check if response is ok 
         if (response.ok) {
             console.log("you did it!")
-            document.location.replace('/');
+            document.location.replace('/',);
         } else {
             console.log("it didn't work")
-            alert(response.statusText);
+            // alert(response.statusText)
+            $('#modalError').modal();
         }
     }
 }

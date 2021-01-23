@@ -10,7 +10,7 @@ router.get('/leave-a-review', (req, res) => {
         .then(dbReviewData => {
             const reviews = dbReviewData.map(review => review.get({ plain: true }))
                 .map(review => ({ ...review, canEdit: review.user_id === req.user_id }));
-            res.render('leave-a-review', { reviews, user: true });
+            res.render('leave-a-review', { reviews, user: req.user });
         })
         .catch(err => {
             console.log(err);

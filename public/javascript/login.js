@@ -18,7 +18,8 @@ async function signinFormHandler(event) {
             console.log("you made it to here")
             document.location.replace('/');
         } else {
-            alert(response.statusText);
+            // alert(response.statusText)
+            $('#modalError').modal();
         }
     }
 }
