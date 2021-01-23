@@ -116,7 +116,10 @@ color: black;
   font-size: 22px ;
 }
 
-
+.footer {
+  position: absolute;
+  bottom: 0;
+}
 
 
 /* Small devices (tablets, 768px and up) */
