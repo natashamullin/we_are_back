@@ -67,7 +67,6 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
         }
     }).then(dbUserData => {
         if (!dbUserData) {
-            console.log("email")
             res.status(400).json({ message: 'No user with that email address found' });
             return;
         }
@@ -83,14 +82,10 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
             req.session.user_id = dbUserData.id;
             req.session.email = dbUserData.email;
             req.session.user = true;
-            console.log("session")
             res.json({ user: dbUserData, message: 'You are now logged in.' });
         });
     });
-
-
 });
-
 
 router.post('/logout', (req, res) => {
     req.session.destroy(() => {
